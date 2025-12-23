@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #e8f5e9; /* Soft garden green */
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Fredoka', cursive;
+    color: #2e7d32;
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 0 white;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: 0 15px 0 #a5d6a7;
+    display: inline-block;
+    border: 6px solid #81c784;
+    margin-top: 20px;
+}
+
+.list {
+    display: flex;
+    gap: 20px;
+    padding: 60px 40px;
+    background: #f1f8e9;
+    border-radius: 100px; /* Track shape */
+    border: 4px dashed #81c784;
+    margin-bottom: 30px;
+}
+
+.node {
+    width: 65px;
+    height: 65px;
+    background: white;
+    border: 4px solid #4caf50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    position: relative;
+    box-shadow: 0 6px 0 #388e3c;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Character 1: The Tortoise 🐢 */
+.slow-pointer::after {
+    content: "🐢";
+    position: absolute;
+    top: -55px;
+    font-size: 40px;
+    animation: bounce 0.5s infinite alternate;
+}
+
+/* Character 2: The Hare 🐰 */
+.fast-pointer::before {
+    content: "🐰";
+    position: absolute;
+    bottom: -55px;
+    font-size: 40px;
+    animation: bounce 0.4s infinite alternate-reverse;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-8px); }
+}
+
+/* Collision Effect */
+.collision {
+    background: #ffeb3b !important;
+    border-color: #fbc02d !important;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px #fbc02d;
+}
+
+button {
+    font-family: 'Fredoka', cursive;
+    background: #ff7043;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 0 #e64a19;
+    transition: 0.1s;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #e64a19;
+}
+
+#statusText {
+    font-weight: 600;
+    color: #1b5e20;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
